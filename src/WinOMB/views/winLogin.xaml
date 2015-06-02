@@ -1,0 +1,9 @@
+﻿<Window x:Class="WindowsOMB.views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ingresar a OMB" Height="200" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Image DockPanel.Dock="Left" Width="150" Source="../Imagenes/sports_mode-144.png"></Image>
+        <ContentControl DockPanel.Dock="Right" Name="loginContent"></ContentControl>
+    </DockPanel>
+</Window>
