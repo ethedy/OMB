@@ -1,0 +1,13 @@
+﻿<Window x:Class="WindowsOMB.View.winLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ingresar a OMB" Height="200" Width="400"
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+  <DockPanel>
+    <Image DockPanel.Dock="Left" Width="150" 
+           Source="../Imagenes/biohazard-144.png"></Image>
+    <ContentControl Name="loginContent" 
+                    DockPanel.Dock="Right"></ContentControl>
+  </DockPanel>
+</Window>

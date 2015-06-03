@@ -1,2 +1,22 @@
 <?xml version="1.0"?>
-<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\View\winMain.xaml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\ViewModel\MainViewModel.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\View\winLogin.xaml</string>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\View\winLogin.xaml.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\View\LoginCredenciales.xaml</string>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\View\LoginCredenciales.xaml.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Enrique\Documents\DESARROLLO\CURSO\OMB\src\WinOMB\ViewModel\LoginViewModel.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>
