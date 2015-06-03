@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WindowsOMB.viewModel;
 
 namespace WindowsOMB.views
 {
@@ -19,10 +20,12 @@ namespace WindowsOMB.views
     /// </summary>
     public partial class LoginView : Window
     {
+        private LoginViewModel _viewModel;
         public LoginView()
         {
             InitializeComponent();
-            this.loginContent.Content = new LoginCredenciales();
+            LoginViewModel vm = new LoginViewModel();
+            this.loginContent.Content = new LoginCredenciales(vm);
         }
     }
 }

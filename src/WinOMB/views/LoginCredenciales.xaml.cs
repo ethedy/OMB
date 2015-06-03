@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WindowsOMB.viewModel;
+using System.Diagnostics;
 
 namespace WindowsOMB.views
 {
@@ -20,14 +22,21 @@ namespace WindowsOMB.views
     /// </summary>
     public partial class LoginCredenciales : UserControl
     {
-        public LoginCredenciales()
+        private LoginViewModel _viewModel;
+        public LoginCredenciales(LoginViewModel vm)
         {
             InitializeComponent();
+            this._viewModel = vm;
+            this.DataContext = _viewModel;
         }
 
         private void loginLoaded(object sender, RoutedEventArgs e)
         {
             txtUsuario.Focus();
+        }
+
+        private void IngresarClick(object sender, EventArgs args) {
+            Debug.WriteLine(string.Format("usuario a logear{0} {1}", _viewModel.UsuarioModel.Login, _viewModel.Password));
         }
     }
 }
