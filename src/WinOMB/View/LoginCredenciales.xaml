@@ -27,11 +27,13 @@
     <Label Content="Usuario" Grid.Column="0" Grid.Row="0"></Label>
     <Label Content="Password" Grid.Column="0" Grid.Row="1"></Label>
     <TextBox Name="txtUsuario" Grid.Column="1" Grid.Row="0" Margin="5"
-             Text="{Binding Path=UsuarioModel.Login}"></TextBox>
-    <PasswordBox Grid.Column="1" Grid.Row="1" Margin="5"></PasswordBox>
+             Text="{Binding Path=UsuarioModel.Login, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+    <TextBox Name="txtPassword" Grid.Column="1" Grid.Row="1" Margin="5"
+             Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"
+             Foreground="{Binding ElementName=txtPassword, Path=Background}"></TextBox>
     <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
                 Orientation="Horizontal" FlowDirection="RightToLeft">
-      <Button Content="Ingresar" IsDefault="True"></Button>
+      <Button Content="Ingresar" IsDefault="True" Command="{Binding IngresoLogin}"></Button>
       <Button Content="Cancelar" IsCancel="True"></Button>
     </StackPanel>
   </Grid>
