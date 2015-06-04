@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WindowsOMB.View.LoginCredenciales"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="120"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Padding" Value="5"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Usuario" Grid.Column="0" Grid.Row="0"></Label>
+        <Label Content="Password" Grid.Column="0" Grid.Row="1"></Label>
+        <TextBox Name="txtUsuario" Grid.Column="1" Grid.Row="0" Margin="5"
+                 Text="{Binding Path=UsuarioModel.Login, UpdateSourceTrigger=PropertyChanged}"> </TextBox>
+        <TextBox Name="txtPassword" Grid.Column="1" Grid.Row="1" Margin="5"
+                     Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <Button Content="Ingresar" IsDefault="True" Command="{Binding Path=IngresoLogin}"></Button>
+            <Button Content="Cancelar" IsCancel="True"></Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

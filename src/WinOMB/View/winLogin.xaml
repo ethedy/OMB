@@ -1,0 +1,8 @@
+﻿<Window x:Class="WindowsOMB.View.winLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ingresar a OMB" Height="200" Width="400" ResizeMode="NoResize">
+    <DockPanel>
+        <Image DockPanel.Dock="Left"
+ Width="150" Source="C:\Users\Alex\Source\Repos\OMB\src\WinOMB\Imagenes\decrypt.png"> </Image>    </DockPanel>
+</Window>
