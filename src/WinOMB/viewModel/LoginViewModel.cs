@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using Entidades.Seguridad;
+using Entidades;
 using System.Diagnostics;
 
 using System.Windows.Input;
