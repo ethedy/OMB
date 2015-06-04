@@ -12,17 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using WindowsOMB.ViewModel;
+
 namespace WindowsOMB.View
 {
-    /// <summary>
-    /// Interaction logic for winLogin.xaml
-    /// </summary>
-    public partial class winLogin : Window
+  /// <summary>
+  /// Interaction logic for winLogin.xaml
+  /// </summary>
+  public partial class winLogin : Window
+  {
+    private LoginViewModel _viewModel;
+
+    public winLogin()
     {
-        public winLogin()
-        {
-            InitializeComponent();
-            this.loginContent.Content = new LoginCredenciales();
-        }
+      InitializeComponent();
+
+      _viewModel = new LoginViewModel();
+      this.loginContent.Content = new LoginCredenciales(_viewModel);
     }
+  }
 }

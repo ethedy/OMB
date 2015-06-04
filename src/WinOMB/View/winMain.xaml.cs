@@ -14,14 +14,14 @@ using System.Windows.Shapes;
 
 namespace WindowsOMB.View
 {
-    /// <summary>
-    /// Interaction logic for winMain.xaml
-    /// </summary>
-    public partial class winMain : Window
+  /// <summary>
+  /// Interaction logic for winMain.xaml
+  /// </summary>
+  public partial class winMain : Window
+  {
+    public winMain()
     {
-        public winMain()
-        {
-            InitializeComponent();
-        }
+      InitializeComponent();
     }
+  }
 }
