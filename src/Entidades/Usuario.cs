@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Entidades.Seguridad
+namespace Entidades
 {
   /// <summary>
   /// Representa a una Persona que puede conectarse al sistema y puede interactuar con el mismo
