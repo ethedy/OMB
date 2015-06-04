@@ -35,8 +35,6 @@ namespace WindowsOMB.views
             txtUsuario.Focus();
         }
 
-        private void IngresarClick(object sender, EventArgs args) {
-            Debug.WriteLine(string.Format("usuario a logear{0} {1}", _viewModel.UsuarioModel.Login, _viewModel.Password));
-        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsOMB.views
     /// </summary>
     public partial class LoginView : Window
     {
-        private LoginViewModel _viewModel;
+        //private LoginViewModel _viewModel;
         public LoginView()
         {
             InitializeComponent();
