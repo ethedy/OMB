@@ -19,6 +19,24 @@ namespace Servicios
 
     }
 
+    public Usuario Login(Usuario usr, string pwd) {
+        Usuario userRetorno;
+
+        userRetorno = DB.Usuarios.Find(u => u.Login == usr.Login);
+        if (userRetorno != null) {
+            if (DB.LoginUsuario(userRetorno, pwd))
+            {
+                return userRetorno;
+            }
+            else {
+                  
+            }
+        }
+
+        return null;  
+        
+    }
+
     public Sesion Login(string uid, string pwd)
     {
       Usuario user;

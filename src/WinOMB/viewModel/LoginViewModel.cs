@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using Entidades;
 using System.Diagnostics;
+using Servicios;
 
 using System.Windows.Input;
+using Infraestructura;
 
 namespace WindowsOMB.viewModel
 {
@@ -46,13 +48,26 @@ namespace WindowsOMB.viewModel
 
         
         public LoginViewModel() {
+            Usuario utemp;
             UsuarioModel = new Usuario();
             //UsuarioModel.Login = "mburns";
 
             IngresoLogin = new ComandoSimple(() =>
             {
-                Debug.WriteLine(string.Format("Usuario: {0} Password {1}", UsuarioModel.Login,Password ));
                 
+                SecurityServices serv = new SecurityServices();
+
+
+
+                utemp = serv.Login(UsuarioModel,Password);
+
+                if (utemp != null)
+                {
+                    Debug.WriteLine(string.Format("Usuario: {0}", UsuarioModel.Persona.CorreoElectronico));
+                }
+                else {
+                    throw new OMBLoginException("error");
+                }
                 
             },
             () => true);
