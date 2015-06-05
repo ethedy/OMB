@@ -58,6 +58,18 @@ namespace WindowsOMB.ViewModel
 
           //  Establecer el login...
           SecurityServices serv = new SecurityServices();
+
+          Usuario utemp = serv.Login(UsuarioModel, Password);
+
+          if (utemp != null)
+          {
+            Debug.WriteLine(UsuarioModel.Persona.CorreoElectronico);
+          }
+          else
+          {
+            //  error de credenciales...
+            Debug.WriteLine("ERROR");
+          }
         },
         () => true);
     }

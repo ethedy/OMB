@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using Database;
 using Entidades;
+using Infraestructura;
 
 namespace Servicios
 {
@@ -17,6 +19,27 @@ namespace Servicios
     public SecurityServices()
     {
 
+    }
+
+    public Usuario Login(Usuario usr, string pwd)
+    {
+      Usuario userRetorno;
+
+      userRetorno = DB.Usuarios.Find(u => u.Login == usr.Login);
+      if (userRetorno != null)
+      {
+        try
+        {
+          if (DB.LoginUsuario(userRetorno, pwd))
+            return userRetorno;
+        }
+        catch (OMBLoginException ex)
+        {
+          Debug.WriteLine(ex.Message);
+          throw;
+        }
+      }
+      return null;
     }
 
     public Sesion Login(string uid, string pwd)

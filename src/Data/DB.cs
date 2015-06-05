@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entidades;
+using Infraestructura;
 
 namespace Database
 {
@@ -55,11 +56,20 @@ namespace Database
     /// <param name="usr">Instancia de Usuario que ya debe estar creada</param>
     /// <param name="pass">Contraseña en formato texto plano</param>
     /// <returns></returns>
+    /// <exception cref="OMBLoginException"></exception>
     public static bool LoginUsuario(Usuario usr, string pass)
     {
       int index = _usuarios.IndexOf(usr);
 
-      return (_passwords[index] == pass);
+      if (_passwords[index] == pass)
+        return true;
+      else
+      {
+        OMBLoginException ex = new OMBLoginException("La password no corresponde al usurio");
+
+        ex.LoginFallido = usr.Login;
+        throw ex;
+      }
     }
 
     public static List<Usuario> Usuarios
