@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
+using WindowsOMB.Comun;
 using Entidades;
 using Servicios;
 
@@ -14,6 +14,8 @@ namespace WindowsOMB.ViewModel
   public class LoginViewModel : INotifyPropertyChanged
   {
     public event PropertyChangedEventHandler PropertyChanged;
+
+    public event EventHandler LoginOK;
 
     private Usuario _usuario;
     //private string _password;
@@ -63,7 +65,12 @@ namespace WindowsOMB.ViewModel
 
           if (utemp != null)
           {
+            UsuarioModel = utemp;
             Debug.WriteLine(UsuarioModel.Persona.CorreoElectronico);
+            serv.CrearSesion(utemp, null);
+
+            if (LoginOK != null)
+              LoginOK(this, null);
           }
           else
           {
@@ -79,30 +86,6 @@ namespace WindowsOMB.ViewModel
     {
       if (PropertyChanged != null)
         PropertyChanged(this, new PropertyChangedEventArgs(propiedad));
-    }
-  }
-
-  public class ComandoSimple : ICommand
-  {
-    private Action _execute;
-    private Func<bool> _canExecute;
- 
-    public ComandoSimple(Action exec, Func<bool> canExec)
-    {
-      _execute = exec;
-      _canExecute = canExec;
-    }
-
-    public bool CanExecute(object parameter)
-    {
-      return _canExecute();
-    }
-
-    public event EventHandler CanExecuteChanged;
-
-    public void Execute(object parameter)
-    {
-      _execute();
     }
   }
 }

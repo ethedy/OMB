@@ -1,8 +1,39 @@
-﻿<Window x:Class="WindowsOMB.View.winMain"
+﻿<sync:RibbonWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="winMain" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
-</Window>
+        xmlns:sync="http://schemas.syncfusion.com/wpf" 
+        x:Class="WindowsOMB.View.winMain"
+        sync:SkinStorage.VisualStyle="Office2013"
+        Title="winMain" Height="300" Width="500"
+        WindowStartupLocation="CenterScreen">
+  <sync:RibbonWindow.StatusBar>
+    <sync:RibbonStatusBar Height="30">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Grid.Row="0" Height="24" Width="24" VerticalAlignment="Center"
+               Source="../Imagenes/security_cross.png"></Image>
+        <TextBlock Grid.Column="1" Text="{Binding Path=UsuarioConectado}"></TextBlock>
+      </Grid>
+    </sync:RibbonStatusBar>
+  </sync:RibbonWindow.StatusBar>
+  <DockPanel LastChildFill="False">
+    <sync:Ribbon x:Name="ribMain" DockPanel.Dock="Top">
+      <sync:RibbonTab Caption="Seguridad" IsChecked="False">
+        <sync:RibbonBar Header="Ingreso y Salida">
+          <sync:RibbonButton SizeForm="Large" Label="Login" Command="{Binding Login}"
+                             LargeIcon="../Imagenes/key.png"></sync:RibbonButton>
+          <sync:RibbonButton SizeForm="Large" Label="Logout" Command="{Binding Logout}"
+                             LargeIcon="../Imagenes/disconnect.png"></sync:RibbonButton>
+        </sync:RibbonBar>
+
+      </sync:RibbonTab>
+
+    </sync:Ribbon>
+    <ContentControl></ContentControl>
+  </DockPanel>
+</sync:RibbonWindow>

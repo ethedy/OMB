@@ -42,6 +42,12 @@ namespace Servicios
       return null;
     }
 
+    public void CrearSesion(Usuario usr, Perfil perfil)
+    {
+      Context.Current.Sesion = new Sesion(usr);
+
+    }
+
     public Sesion Login(string uid, string pwd)
     {
       Usuario user;

@@ -29,6 +29,8 @@ namespace WindowsOMB.View
 
       _viewModel = new LoginViewModel();
       this.loginContent.Content = new LoginCredenciales(_viewModel);
+
+      _viewModel.LoginOK += (sender, args) => this.Close();
     }
   }
 }
